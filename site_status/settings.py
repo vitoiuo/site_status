@@ -14,7 +14,7 @@ import os
 from pathlib import Path
 from xmlrpc.client import INTERNAL_ERROR
 from dotenv import load_dotenv
-
+import django_on_heroku
 
 load_dotenv()
 
@@ -144,3 +144,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+django_on_heroku.settings(locals())

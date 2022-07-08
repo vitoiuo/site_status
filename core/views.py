@@ -9,9 +9,7 @@ def index(request):
 
 def sites_list(request):
     #PAGINAÇÃO - EM PROGRESSO
-    sites_list = Site.objects.filter(user_id=1)
-    paginator = Paginator(sites_list, 3)
-    page = request.GET.get('page')
-    sites = paginator.get_page(page)
+    sites = Site.objects.all()
+    
 
     return render(request,'core/sites_list.html',{'sites':sites})

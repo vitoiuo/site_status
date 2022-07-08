@@ -1,1 +1,25 @@
-
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Roboto";
+}
+nav {
+  padding: 0.5rem;
+}
+.navigation-item {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+.nav-item-topic {
+  text-transform: capitalize;
+  font-size: 18px;
+}
+.lobby-image {
+  width: 100%;
+}
+.nav-item-topic a {
+  color: #333;
+}
