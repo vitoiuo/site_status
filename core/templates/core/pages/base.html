@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Importação Font Awesome -->
+  <script src="https://kit.fontawesome.com/fd2cedbe14.js" crossorigin="anonymous"></script>
+  <!-- Importação dos estilos definidos localmente -->
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  <link rel="stylesheet" href="{% static 'css/register.css' %}">
+  <link rel="stylesheet" href="{% static 'css/sites.css' %}">
+
+  <!-- Fonte utilizada -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+
+  <title>SSC</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <!-- Inserir fora dos blocks coisas comuns a todas as páginas. Ex: navbar, footer -->
+
+      <nav>
+        <ul class="navigation-item">
+          <li class="nav-item-topic page-name"><a href="">oops!</a></li>
+          <li class="nav-item-topic"><a href="">my sites</a></li>
+        </ul>
+        <section class="navigation-item">
+          <button class="login btn">login</button>
+          <button class="register btn">registrar</button>
+        </section>
+      </nav>
+      {% block header %}
+      {% endblock %}
+    </header>
+    {% block content %}
+    {% endblock %}
+    <footer>
+      <ul class="footer-item">
+        <li class="footer-item-topic">a</li>
+        <li class="footer-item-topic">a</li>
+        <li class="footer-item-topic">a</li>
+        <li class="footer-item-topic">a</li>
+      </ul>
+    </footer>
+  </div>
+</body>
+
+</html>
