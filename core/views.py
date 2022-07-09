@@ -5,11 +5,10 @@ from .models import Site
 # Create your views here.
 
 def index(request):
-    return render(request, 'core/index.html')
+    return render(request, 'core/pages/index.html')
 
 def sites_list(request):
     #PAGINAÇÃO - EM PROGRESSO
     sites = Site.objects.all()
-    
 
-    return render(request,'core/sites_list.html',{'sites':sites})
+    return render(request,'core/pages/sites_list.html',{'sites':sites})

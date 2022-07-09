@@ -4,22 +4,58 @@
   list-style: none;
   text-decoration: none;
   font-family: "Roboto";
+  box-sizing: content-box;
+}
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 5rem;
 }
 nav {
+  width: 100%;
   padding: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ffc936;
 }
 .navigation-item {
-  width: 100%;
+  width: 50%;
   display: flex;
-  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 18px;
+}
+.btn {
+  text-transform: capitalize;
+  border: solid 1px transparent;
+  font-size: 18px;
+}
+.login {
+  background-color: transparent;
+}
+.register {
+  padding: 8px;
+  border-radius: 36px;
 }
 .nav-item-topic {
   text-transform: capitalize;
-  font-size: 18px;
-}
-.lobby-image {
-  width: 100%;
 }
 .nav-item-topic a {
   color: #333;
+}
+.page-name a {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #333;
+  font-weight: bold;
+}
+footer {
+  width: 100%;
+  background-color: #333;
+  height: 20rem;
+}
+.footer-item-topic {
+  color: #fff;
 }
