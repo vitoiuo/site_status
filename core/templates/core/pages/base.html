@@ -37,15 +37,14 @@
           <li class="nav-item-topic page-name"><a href="{% url 'index' %}">Site_name</a></li>
           <li class="nav-item-topic"><a href="{% url 'sites-list' %}">my sites</a></li>
         </ul>
-        <section class="navigation-item">
-          <ul>
-
+        <section>
+          <ul class="navigation-item">
             {% if user.is_authenticated %}
             <li><a href="/accounts/logout">Logout</a></li>
             <li>{{user.username}}</li>
             {% else %}
-            <li><a href="/accounts/login">Login</a></li>
-            <li><a href="/accounts/register">Register</a></li>
+            <li><a href="/accounts/login">Entrar</a></li>
+            <li><a href="/accounts/register">Registrar</a></li>
             {% endif %}
           </ul>
         </section>
