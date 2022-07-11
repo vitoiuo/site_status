@@ -1,11 +1,13 @@
 {% extends 'core/pages/base.html' %}
 
 {% block content %}
-<p>asdasdasda</p>
+<a href="{% url 'add-site' %}"><i class="fas fa-add"></i></a>
 {% for site in sites %}
 <div class="sites">
     <h1>{{ site.name }}</h1>
     <h2>{{ site.url }}</h2>
+    <a href="{% url 'edit-site' site.id %}"><i class="fas fa-edit"></i></a>
+    <a href="{% url 'delete-site' site.id %}"><i class="fas fa-trash"></i></a>
 </div>
 {% endfor %}
 {% endblock %}

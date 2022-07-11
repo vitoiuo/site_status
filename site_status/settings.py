@@ -49,10 +49,14 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = []
 
 if DEBUG:
-    THIRD_PARTY_APPS += ["debug_toolbar"]
+    THIRD_PARTY_APPS += [
+        "debug_toolbar",
+        
+        ]
 
 LOCAL_APPS = [
     'core',
+    'crispy_forms',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -155,4 +159,8 @@ INTERNAL_IPS = [
 ]
 
 django_on_heroku.settings(locals())
+
+LOGIN_REDIRECT_URL = '/'
+
+LOGOUT_REDIRECT_URL = '/'
 

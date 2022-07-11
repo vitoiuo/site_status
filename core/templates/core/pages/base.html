@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="{% static 'css/login.css' %}">
   <link rel="stylesheet" href="{% static 'css/register.css' %}">
   <link rel="stylesheet" href="{% static 'css/sites.css' %}">
+  <link rel="stylesheet" href="{% static 'css/sites-register.css' %}">
+  <link rel="stylesheet" href="{% static 'css/sites-edit.css' %}">
 
   <!-- Fonte utilizada -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +34,20 @@
 
       <nav>
         <ul class="navigation-item">
-          <li class="nav-item-topic page-name"><a href="">oops!</a></li>
-          <li class="nav-item-topic"><a href="">my sites</a></li>
+          <li class="nav-item-topic page-name"><a href="{% url 'index' %}">Site_name</a></li>
+          <li class="nav-item-topic"><a href="{% url 'sites-list' %}">my sites</a></li>
         </ul>
         <section class="navigation-item">
-          <button class="login btn">login</button>
-          <button class="register btn">registrar</button>
+          <ul>
+
+            {% if user.is_authenticated %}
+            <li><a href="/accounts/logout">Logout</a></li>
+            <li>{{user.username}}</li>
+            {% else %}
+            <li><a href="/accounts/login">Login</a></li>
+            <li><a href="/accounts/register">Register</a></li>
+            {% endif %}
+          </ul>
         </section>
       </nav>
       {% block header %}
