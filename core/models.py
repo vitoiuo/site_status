@@ -13,5 +13,5 @@ class Site(models.Model):
 class SiteStatus(models.Model):
     request_code = models.CharField(max_length=16)
     is_active = models.BooleanField(default=True)
-    last_check = models.DateTimeField()
+    last_check = models.DateTimeField(auto_now_add=True)
     site_id = models.ForeignKey('Site', on_delete=models.CASCADE)

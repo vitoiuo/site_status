@@ -57,6 +57,7 @@ if DEBUG:
 LOCAL_APPS = [
     'core',
     'crispy_forms',
+    'django_crontab',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -156,6 +157,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 INTERNAL_IPS = [
     "127.0.0.1",
+]
+
+CRONJOBS = [
+    ('*/10 * * * *', 'core.cron.my_cron_job')
 ]
 
 django_on_heroku.settings(locals())
