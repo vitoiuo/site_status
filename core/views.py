@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator
 from django.contrib.auth.models import User
-from .models import Site
+from .models import Site, SiteStatus
 from .forms import SiteForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.db.models import Max
 # Create your views here.
 
 def index(request):
@@ -13,8 +14,15 @@ def index(request):
 @login_required
 def sites_list(request):
     sites = Site.objects.filter(user_id=request.user)
+    down_sites = SiteStatus.objects.filter(is_active=False).values('site_id').annotate(max_pk=Max('pk'))
+    down_urls = []
+    for site in down_sites:
+        for key, value in site.items():
+            if key == 'site_id':
+                down_urls.append(value)
     context = {
         'sites':sites,
+        'down_urls':down_urls,
     }
     return render(request,'core/pages/sites_list.html',context)
 

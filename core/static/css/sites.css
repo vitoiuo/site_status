@@ -1,14 +1,17 @@
 h2 {
+  font-size: 24px;
   display: inline;
+  text-transform: uppercase;
 }
 h3 {
   font-weight: normal;
+  color: #aaaaaa;
 }
 .content {
-  padding: 2rem;
+  padding: 1rem;
   display: flex;
   flex-flow: column nowrap;
-  gap: 2rem;
+  gap: 3.2rem;
 }
 .sites-list {
   display: flex;
@@ -20,35 +23,49 @@ h3 {
   display: flex;
   flex-flow: column nowrap;
   gap: 1rem;
+  padding: 2rem;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
 .site-infos {
   display: flex;
   flex-flow: column nowrap;
   gap: 1rem;
 }
-.sites-tag {
+.site-tag {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
 }
 .site-actions {
   display: flex;
   flex-flow: row nowrap;
   gap: 1rem;
 }
-.fas.fa-trash,
-.fas.fa-edit,
 .add-link,
 .add-link i {
   color: #000000;
+}
+.fas.fa-trash,
+.fas.fa-edit {
+  color: #aaaaaa;
 }
 .add-link {
   font-size: 18px;
 }
 .add-area {
+  display: flex;
   width: 50%;
+  justify-content: center;
+  align-items: center;
   border-radius: 10px;
   display: flex;
   gap: 1rem;
   padding: 1rem;
   background-color: #e5e5e5;
+}
+.red-icon {
+  color: red;
+}
+.green-icon {
+  color: green;
 }
