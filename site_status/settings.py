@@ -146,6 +146,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+MEDIA_URL = '/media/'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
@@ -166,7 +168,5 @@ django_on_heroku.settings(locals())
 LOGIN_REDIRECT_URL = '/'
 
 LOGOUT_REDIRECT_URL = '/'
-
-DISABLE_COLLECTSTATIC=1
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'

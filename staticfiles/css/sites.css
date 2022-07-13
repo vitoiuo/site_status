@@ -1,0 +1,54 @@
+h2 {
+  display: inline;
+}
+h3 {
+  font-weight: normal;
+}
+.content {
+  padding: 2rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2rem;
+}
+.sites-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: center;
+}
+.sites {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+.site-infos {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+.sites-tag {
+  display: flex;
+  justify-content: center;
+}
+.site-actions {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+}
+.fas.fa-trash,
+.fas.fa-edit,
+.add-link,
+.add-link i {
+  color: #000000;
+}
+.add-link {
+  font-size: 18px;
+}
+.add-area {
+  width: 50%;
+  border-radius: 10px;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #e5e5e5;
+}

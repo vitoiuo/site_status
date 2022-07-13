@@ -1,0 +1,15 @@
+.lobby {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 3rem;
+  padding: 1rem;
+}
+.lobby-image {
+  width: 100%;
+}
+.lobby-call {
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+  gap: 1rem;
+}
