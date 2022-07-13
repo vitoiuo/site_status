@@ -46,7 +46,9 @@ DJANGO_APPS = [
 ]
 
 
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = [
+    'django_extensions'
+]
 
 if DEBUG:
     THIRD_PARTY_APPS += [
@@ -169,4 +171,6 @@ LOGIN_REDIRECT_URL = '/'
 
 LOGOUT_REDIRECT_URL = '/'
 
-DISABLE_COLLECTSTATIC=1
+# DISABLE_COLLECTSTATIC=1
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
