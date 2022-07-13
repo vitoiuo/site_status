@@ -34,14 +34,15 @@
 
       <nav>
         <ul class="navigation-item">
-          <li class="nav-item-topic page-name"><a href="{% url 'index' %}">Site_name</a></li>
-          <li class="nav-item-topic"><a href="{% url 'sites-list' %}">my sites</a></li>
+          <li class="nav-item-topic page-name"><a href="{% url 'index' %}">Oops</a></li>
         </ul>
         <section>
+
           <ul class="navigation-item">
+            <li class="nav-item-topic"><a href="{% url 'sites-list' %}">meus sites</a></li>
             {% if user.is_authenticated %}
             <li><a href="/accounts/logout">Logout</a></li>
-            <li>{{user.username}}</li>
+            <li>{{user.username.capitalize}}</li>
             {% else %}
             <li><a href="/accounts/login">Entrar</a></li>
             <li><a href="/accounts/register">Registrar</a></li>
@@ -52,8 +53,10 @@
       {% block header %}
       {% endblock %}
     </header>
-    {% block content %}
-    {% endblock %}
+    <div class="content">
+      {% block content %}
+      {% endblock %}
+    </div>
     <footer>
       <ul class="footer-item">
         <li class="footer-item-topic">a</li>
