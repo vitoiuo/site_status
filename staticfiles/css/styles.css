@@ -3,29 +3,31 @@
   margin: 0;
   list-style: none;
   text-decoration: none;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   box-sizing: content-box;
 }
 .container {
   display: flex;
   flex-flow: column nowrap;
-  gap: 2rem;
+  gap: 4rem;
 }
 nav {
-  width: 100%;
-  padding: 1.2rem 0.6rem;
+  padding: 1.8rem 1.8rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: #ffc936;
   gap: 4rem;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
 .navigation-item {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  font-size: 16px;
+}
+.navigation-item li a {
+  color: #333;
 }
 .btn {
   text-transform: capitalize;
@@ -40,13 +42,13 @@ nav {
   border-radius: 36px;
 }
 .nav-item-topic {
+  text-align: center;
   text-transform: capitalize;
-}
-.nav-item-topic a {
+  font-size: 18px;
   color: #333;
 }
 .page-name a {
-  font-size: 20px;
+  font-size: 24px;
   text-transform: uppercase;
   color: #333;
   font-weight: bold;
@@ -58,4 +60,7 @@ footer {
 }
 .footer-item-topic {
   color: #fff;
+}
+nav section {
+  width: 80%;
 }
