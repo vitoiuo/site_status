@@ -39,7 +39,7 @@
         <section>
 
           <ul class="navigation-item">
-            <li class="nav-item-topic"><a href="{% url 'sites-list' %}">meus sites</a></li>
+            <li class="nav-item-topic"><a href="{% url 'sites-list' %}">sites</a></li>
             {% if user.is_authenticated %}
             <li class="nav-item-topic"><a href="/accounts/logout">Sair</a></li>
             <li class="nav-item-topic">{{user.username.capitalize}}</li>
