@@ -1,3 +1,5 @@
+from this import d
+from turtle import down
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator
 from django.contrib.auth.models import User
@@ -14,12 +16,16 @@ def index(request):
 @login_required
 def sites_list(request):
     sites = Site.objects.filter(user_id=request.user)
-    down_sites = SiteStatus.objects.filter(is_active=False).values('site_id').annotate(max_pk=Max('pk'))
+    last_status = SiteStatus.objects.values('site_id').annotate(max_pk=Max('pk'))
+    last_status_down = last_status.filter(is_active=False)
     down_urls = []
-    for site in down_sites:
-        for key, value in site.items():
-            if key == 'site_id':
-                down_urls.append(value)
+
+    for status, status_down in zip(last_status, last_status_down):
+        if status == status_down:
+            for key, value in status.items():
+                if key == 'site_id':
+                    down_urls.append(value)
+                    
     context = {
         'sites':sites,
         'down_urls':down_urls,
