@@ -12,4 +12,7 @@ def sites_checker():
                 except HTTPError as erro:
                     SiteStatus.objects.create(request_code=erro.code, is_active=False, site_id=site_under_view)
                 else:
-                    SiteStatus.objects.create(request_code=status, is_active=True,  site_id=site_under_view)
+                    if SiteStatus.objects.filter(site_id=site_under_view):
+                        SiteStatus.objects.create(request_code=status, is_active=True,  site_id=site_under_view)
+                    else:
+                        SiteStatus.objects.create(request_code=status, is_active=False,  site_id=site_under_view)

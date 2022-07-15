@@ -161,7 +161,7 @@ INTERNAL_IPS = [
 ]
 
 CRONJOBS = [
-    ('*/10 * * * *', 'core.cron.my_cron_job')
+    ('*/5 * * * *', 'core.cron.my_cron_job')
 ]
 
 django_on_heroku.settings(locals())
