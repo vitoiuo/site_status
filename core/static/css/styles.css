@@ -58,13 +58,15 @@ footer {
   padding: 5rem;
   display: flex;
   gap: 4rem;
-  justify-content: center;
+  justify-content: space-between;
 }
 .footer-item-topic {
+  color: #fff;
+}
+.footer-item {
   display: flex;
   flex-flow: column nowrap;
-  gap: 2rem;
-  color: #fff;
+  gap: 0.8rem;
 }
 nav section {
   width: 80%;
