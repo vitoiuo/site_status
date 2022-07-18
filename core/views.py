@@ -15,7 +15,7 @@ def index(request):
 
 @login_required
 def sites_list(request):
-    sites = Site.objects.filter(user_id=request.user)
+    sites = Site.objects.filter(user_id=request.user).order_by('name')
     last_status = SiteStatus.objects.values('site_id').annotate(max_pk=Max('pk'))
     last_status_down = last_status.filter(is_active=False)
     down_urls = []
@@ -31,6 +31,21 @@ def sites_list(request):
         'down_urls':down_urls,
     }
     return render(request,'core/pages/sites_list.html',context)
+
+@login_required
+def view_site(request, id):
+    site = get_object_or_404(Site, pk=id)
+    last_status_infos = SiteStatus.objects.values('site_id').annotate(max_pk=Max('pk')).filter(site_id=site)
+    for last_status in last_status_infos:
+        for key, value in last_status.items():
+            if key == 'max_pk':
+                last_status = value
+    status = SiteStatus.objects.get(id=last_status)
+    context = {
+        'site':site,
+        'status':status,
+    }
+    return render(request, 'core/pages/site-view.html', context)
 
 @login_required
 def add_site(request):

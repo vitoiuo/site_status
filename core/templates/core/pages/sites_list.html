@@ -8,7 +8,7 @@
     <div class="sites">
         <section class="site-infos">
             <span class="site-tag">
-                <h2>{{ site.name }}</h2>
+                <h2 class="site-name"><a href="{% url 'view-site' site.id %}">{{ site.name }}</a></h2>
                 {% if site.id in down_urls %}
                 <i class="fas fa-circle red-icon"></i>
                 {% else %}
