@@ -25,5 +25,18 @@
     {% empty %}
     <p class="blank-list">Não há nada aqui</p>
     {% endfor %}
+    <div class="pagination">
+        <span>
+            {% if sites.has_previous %}
+            <a href="?page={{ sites.previous_page_number }}"><i class="fas fa-arrow-left"></i></a>
+            {% endif %}
+            <span class="current">
+                {{ sites.number }} de {{ sites.paginator.num_pages }}
+            </span>
+            {% if sites.has_next %}
+            <a href="?page={{ sites.next_page_number }}"><i class="fas fa-arrow-right"></i></a>
+            {% endif %}
+        </span>
+    </div>
 </div>
 {% endblock %}

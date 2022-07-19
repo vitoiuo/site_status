@@ -69,3 +69,11 @@
 .fas.fa-circle {
   padding-left: 2rem;
 }
+.pagination {
+  align-self: center;
+}
+.pagination span {
+  display: flex;
+  column-gap: 1rem;
+  font-size: 20px;
+}
