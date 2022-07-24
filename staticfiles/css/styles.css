@@ -54,12 +54,19 @@ nav {
   font-weight: bold;
 }
 footer {
-  width: 100%;
   background-color: #14213d;
-  height: 20rem;
+  padding: 5rem;
+  display: flex;
+  gap: 4rem;
+  justify-content: space-between;
 }
 .footer-item-topic {
   color: #fff;
+}
+.footer-item {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.8rem;
 }
 nav section {
   width: 80%;
