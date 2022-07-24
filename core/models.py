@@ -1,3 +1,4 @@
+from http import HTTPStatus
 from django.db import models
 from django.conf import settings
 # Create your model here.
@@ -15,3 +16,11 @@ class SiteStatus(models.Model):
     is_active = models.BooleanField(default=False)
     last_check = models.DateTimeField(auto_now_add=True)
     site_id = models.ForeignKey('Site', on_delete=models.CASCADE)
+
+    def save(self, *args, **kwargs):
+        if self.request_code == HTTPStatus.OK:
+            self.is_active=True
+        else:
+            self.is_active=False
+        super(SiteStatus, self).save(*args, **kwargs)
+
