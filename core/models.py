@@ -20,7 +20,5 @@ class SiteStatus(models.Model):
     def save(self, *args, **kwargs):
         if self.request_code == HTTPStatus.OK:
             self.is_active=True
-        else:
-            self.is_active=False
         super(SiteStatus, self).save(*args, **kwargs)
 
