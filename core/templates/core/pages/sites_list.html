@@ -1,42 +1,48 @@
-{% extends 'core/pages/base.html' %}
-
-{% block content %}
-<span class="add-area"><a class='add-link' href="{% url 'add-site' %}">Adicione um site</a><i class="fas fa-add"></i></span>
+{% extends 'core/pages/base.html' %} {% block content %}
+<span class="add-area"
+  ><a class="add-link" href="{% url 'add-site' %}">Adicione um site</a
+  ><i class="fas fa-add"></i
+></span>
 
 <div class="sites-list">
-    {% for site in sites %}
-    <div class="sites">
-        <section class="site-infos">
-            <span class="site-tag">
-                <h2 class="site-name"><a href="{% url 'view-site' site.id %}">{{ site.name }}</a></h2>
-                {% if site.id in down_urls %}
-                <i class="fas fa-circle red-icon"></i>
-                {% else %}
-                <i class="fas fa-circle green-icon"></i>
-                {% endif %}
-            </span>
-
-        </section>
-        <section class="site-actions">
-            <a href="{% url 'edit-site' site.id %}"><i class="fas fa-edit"></i></a>
-            <a href="{% url 'delete-site' site.id %}"><i class="fas fa-trash"></i></a>
-        </section>
-    </div>
-    {% empty %}
-    <p class="blank-list">Não há nada aqui</p>
-    {% endfor %}
-    <div class="pagination">
-        <span>
-            {% if sites.has_previous %}
-            <a href="?page={{ sites.previous_page_number }}"><i class="fas fa-arrow-left"></i></a>
-            {% endif %}
-            <span class="current">
-                {{ sites.number }} de {{ sites.paginator.num_pages }}
-            </span>
-            {% if sites.has_next %}
-            <a href="?page={{ sites.next_page_number }}"><i class="fas fa-arrow-right"></i></a>
-            {% endif %}
-        </span>
-    </div>
+  {% for site in sites %}
+  <div class="sites">
+    <section class="site-infos">
+      <span class="site-tag">
+        <h2 class="site-name">
+          <a href="{% url 'view-site' site.id %}">{{ site.name }}</a>
+        </h2>
+        {% if site in down_urls %}
+        <i class="fas fa-circle red-icon"></i>
+        {% else %}
+        <i class="fas fa-circle green-icon"></i>
+        {% endif %}
+      </span>
+    </section>
+    <section class="site-actions">
+      <a href="{% url 'edit-site' site.id %}"><i class="fas fa-edit"></i></a>
+      <a href="{% url 'delete-site' site.id %}"><i class="fas fa-trash"></i></a>
+    </section>
+  </div>
+  {% empty %}
+  <p class="blank-list">Não há nada aqui</p>
+  {% endfor %}
+  <div class="pagination">
+    <span>
+      {% if sites.has_previous %}
+      <a href="?page={{ sites.previous_page_number }}"
+        ><i class="fas fa-arrow-left"></i
+      ></a>
+      {% endif %}
+      <span class="current">
+        {{ sites.number }} de {{ sites.paginator.num_pages }}
+      </span>
+      {% if sites.has_next %}
+      <a href="?page={{ sites.next_page_number }}"
+        ><i class="fas fa-arrow-right"></i
+      ></a>
+      {% endif %}
+    </span>
+  </div>
 </div>
 {% endblock %}

@@ -4,7 +4,7 @@ from .models import Site, SiteStatus
 from .forms import SiteForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.db.models import Max
+from django.db.models import Max, OuterRef, Subquery
 # Create your views here.
 
 def index(request):
@@ -12,25 +12,22 @@ def index(request):
 
 @login_required
 def sites_list(request):
-    sites_list = Site.objects.filter(user_id=request.user).order_by('name')
+    sites_list = Site.objects.filter(user_id=request.user)
+    sites_list_by_edit = Site.objects.filter(user_id=request.user).order_by('-sitestatus__id')[:len(sites_list)] 
     paginator = Paginator(sites_list, 3)
     page = request.GET.get('page')
     sites = paginator.get_page(page)
-
-    last_status = SiteStatus.objects.values('site_id').annotate(max_pk=Max('pk'))
-    last_status_down = last_status.filter(is_active=False)
     down_urls = []
-
-   
-    for status, status_down in zip(last_status, last_status_down):
-        if status == status_down:
-            for key, value in status.items():
-                if key == 'site_id':
-                    down_urls.append(value)
+    last_checks = SiteStatus.objects.filter(site_id__user_id=request.user).order_by('-id')[:len(sites_list)]
+    q= []
+    for site, check in zip(sites_list_by_edit, last_checks):
+        q.append(check.is_active)
+        if check.is_active == False:
+            down_urls.append(site)
 
     context = {
-        'sites':sites,
-        'down_urls': down_urls
+        'sites':sites, 
+        'down_urls':down_urls,
     }
     return render(request,'core/pages/sites_list.html',context)
 
@@ -96,3 +93,5 @@ def delete_site(request, id):
 
     messages.info(request, 'Site deletado com sucesso.')
     return redirect('sites-list')
+
+
