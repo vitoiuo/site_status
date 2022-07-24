@@ -47,19 +47,18 @@ DJANGO_APPS = [
 
 
 THIRD_PARTY_APPS = [
-    'django_extensions'
+    'django_extensions',
+    'crispy_forms',
+    'django_crontab',
 ]
 
 if DEBUG:
     THIRD_PARTY_APPS += [
-        "debug_toolbar",
-        
+        "debug_toolbar",  
         ]
 
 LOCAL_APPS = [
     'core',
-    'crispy_forms',
-    'django_crontab',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
