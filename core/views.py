@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator
+from core.user_down_urls import check_down_urls
 from .models import Site, SiteStatus
 from .forms import SiteForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.db.models import Max, OuterRef, Subquery
+from django.db.models import Max
+from .user_down_urls import check_down_urls
 # Create your views here.
 
 def index(request):
@@ -13,17 +15,11 @@ def index(request):
 @login_required
 def sites_list(request):
     sites_list = Site.objects.filter(user_id=request.user)
-    sites_list_by_edit = Site.objects.filter(user_id=request.user).order_by('-sitestatus__id')[:len(sites_list)] 
+    down_urls = check_down_urls(sites=sites_list, user=request.user)
+
     paginator = Paginator(sites_list, 3)
     page = request.GET.get('page')
     sites = paginator.get_page(page)
-    down_urls = []
-    last_checks = SiteStatus.objects.filter(site_id__user_id=request.user).order_by('-id')[:len(sites_list)]
-    q= []
-    for site, check in zip(sites_list_by_edit, last_checks):
-        q.append(check.is_active)
-        if check.is_active == False:
-            down_urls.append(site)
 
     context = {
         'sites':sites, 
