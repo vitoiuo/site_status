@@ -1,0 +1,75 @@
+.container {
+	background-color: black;
+	margin-right: 1%;
+	margin-left: 1%;
+	display: block;
+	color: black;
+}
+.questionario_login {
+	background-color: white;
+    display: inline-block;
+    border-radius: 0.5rem;
+    width: 325px;
+    height: 375px;
+}
+h4 {
+	font-size: 32px;
+	color: #ffc936;
+	margin-bottom: 3%;
+}
+
+.pg_login {
+	background-color: black;
+}
+
+form {
+	font-size: 14px;
+	margin-top: 8%;
+	margin-left: 4%;
+	line-height: 20px;
+	width: 200px;
+	color: black;
+}
+
+form li  {
+	font-size: 8.5px;
+	line-height: 8.5px;
+	text-align: justify;
+	margin: 1%;
+	color: black;
+}
+
+
+form p {
+	font-size: 8.5px;
+	line-height: 8.5px;
+	text-align: justify;
+	margin: 1%;
+	color: black;
+}
+
+
+.container a {
+	color:#ffc936;
+}
+
+.container input {
+	border-radius: 1rem;
+	border: 1px solid black;
+	height: 20px;
+}
+
+.container button {
+	background-color: #ffc936;
+	height: 35px;
+	width: 70px;
+	margin-top: 5%;
+	border: transparent;
+	border-radius: 1rem;
+	font-weight: 500;
+}
+
+
+.accounts {
+	color: white;
+}

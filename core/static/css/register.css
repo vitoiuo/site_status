@@ -1,0 +1,67 @@
+.container {
+	background-color: black;
+	margin-right: 1%;
+	margin-left: 1%;
+	display: block;
+}
+.questionario_register {
+	background-color: white;
+    display: inline-block;
+    border-radius: 0.5rem;
+    width: 325px;
+    height: 450px;
+}
+h4 {
+	font-size: 32px;
+	color: #ffc936;
+	margin-bottom: 3%;
+}
+
+.pg_login {
+	background-color: black;
+}
+
+form {
+	font-size: 16px;
+	margin-top: 4%;
+	margin-left: 2%;
+	line-height: 20px;
+	width: 200px;
+	margin-top: 6%;
+}
+
+form li, form p {
+	font-size: 10px;
+	line-height: 8.5px;
+	text-align: justify;
+	margin-top: 6%;
+	color: black;
+}
+
+
+.container a {
+	color:#ffc936;
+}
+
+
+.container input {
+	border-radius: 1rem;
+	border: 1px solid black;
+	height: 20px;
+}
+
+.container button {
+	background-color: #ffc936;
+	height: 35px;
+	width: 70px;
+	border: transparent;
+	border-radius: 1rem;
+	font-weight: 500;
+}
+
+
+
+.accounts p {
+	color: white;
+	font-size: 12px;
+}

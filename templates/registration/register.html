@@ -1,12 +1,18 @@
 {% extends 'core/pages/base.html' %}
 {% block content %}
 {% load crispy_forms_tags %}
-<h4>Registro</h4>
-<form method="POST">
-    {% csrf_token %}
-    <input type="hidden" name="next" value="{{ next }}">
-    {{ form|crispy }}
-    <button type="submt">Registrar</button>
-</form>
-<p>Já possui uma conta? <a href="/accounts/login">Entre aqui.</a></p>
+<div class="background_preto">
+    <h4>Registro</h4>
+    <div class="questionario_register">
+        <form method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}">
+            {{ form|crispy }}
+            <button type="submt">Registrar</button>
+        </form>
+    </div>
+    <div class="accounts">
+    <p>Já possui uma conta? <a href="/accounts/login">Entre aqui.</a></p>
+    </div>
+</div>    
 {% endblock %}
