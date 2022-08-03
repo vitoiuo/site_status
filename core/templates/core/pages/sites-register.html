@@ -2,10 +2,12 @@
 
 {% block content %}
 {% load crispy_forms_tags %}
+<div class="formulario">
+    <form class="form-registro" method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input class="botao-form" type="submit" value="Inserir site">
+    </form>
+</div>
 
-<form method="POST">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <input type="submit" value="Inserir site">
-</form>
 {% endblock %}

@@ -1,12 +1,15 @@
 {% extends 'core/pages/base.html' %}
 {% block content %}
 {% load crispy_forms_tags %}
-<h4>Login</h4>
+<div class="logineregistro">
+    <h4>Login</h4>
 <form method="POST">
     {% csrf_token %}
     <input type="hidden" name="next" value="{{ next }}">
     {{ form|crispy }}
     <button type="submt">Entrar</button>
 </form>
-<p>Quer criar uma conta? <a href="/accounts/register">Entre aqui.</a></p>
+<p>Quer criar uma conta? <a href="/accounts/register" style="color:yellow;">Entre aqui.</a></p>
+</div>
+
 {% endblock %}

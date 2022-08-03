@@ -6,10 +6,11 @@
   font-family: "Roboto", sans-serif;
   box-sizing: content-box;
 }
+
 .container {
   display: flex;
   flex-flow: column nowrap;
-  gap: 4rem;
+  /* gap: 4rem; */
 }
 nav {
   padding: 1.8rem 1.8rem;
@@ -22,7 +23,7 @@ nav {
 }
 .navigation-item {
   display: flex;
-  justify-content: center;
+/*   justify-content: center; */
   align-items: center;
   gap: 1rem;
 }
@@ -44,21 +45,24 @@ nav {
 .nav-item-topic {
   text-align: center;
   text-transform: capitalize;
-  font-size: 18px;
+  font-size: 19px;
   color: #333;
+  font-weight: bolder;
 }
 .page-name a {
   font-size: 24px;
-  text-transform: uppercase;
+/*   text-transform: uppercase; */
   color: #333;
   font-weight: bold;
 }
 footer {
-  background-color: #14213d;
-  padding: 5rem;
   display: flex;
-  gap: 4rem;
-  justify-content: space-between;
+  width: 100%;
+  background-color: #14213d;
+  height: 5rem;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 .footer-item-topic {
   color: #fff;
@@ -69,5 +73,99 @@ footer {
   gap: 0.8rem;
 }
 nav section {
-  width: 80%;
+  width: 45%;
 }
+
+.titles {
+  color: rgb(0, 0, 0);
+  font-size: x-large;
+  padding: 2%;
+  text-shadow: 2px 0 0 #ffc936, -2px 0 0 #ffc936, 0 2px 0 #ffc936, 0 -2px 0 #ffc936, 1px 1px #ffc936, -1px -1px 0 #ffc936, 1px -1px 0 #ffc936, -1px 1px 0 #ffc936;
+  text-align: center;
+  display: flex;
+  align-self: center;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+h2 {
+  text-align: center;
+  display: flex;
+  align-self: center;
+  font-size: 40px;
+  text-transform: uppercase;
+  }
+
+.texto-no-quadrado {
+  color: black;
+  background-color: #ffc936;
+  /* padding-bottom: 10%; */
+  /* font-weight: unset; */
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 17px;
+  font-weight: bolder;
+  box-shadow: 1px 2px 20px 4px #ffc936;
+}
+
+.box-mais-monitorados {
+  /* padding: 50px 10%; */
+  /* color: #ffc936; */
+/*   display: flex;
+/*   margin: 0; */
+  padding: 0; 
+}
+
+.painel {
+  display: flex;
+  flex-direction: column;
+  /* flex-direction: column; */
+/*   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; */
+  /* max-width: 630px; */
+  /* justify-content: space-around; */
+}
+
+.quadrado {
+  background-color: #ffc936;
+  /* display: flex; */
+  /* display: inline-block; */
+  /* min-height: 87px; */
+  /* min-width: 84px; */
+  margin: 1%;
+  padding-right: 10px;
+  /* max-width: 299px; */
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  box-shadow: 1px 2px 20px 4px #ffc936;
+  padding: 1% 5%;
+  height: 3rem;
+}
+
+.mini-logo {
+  width: 15%;
+}
+
+.centralizar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* <h4 class="sub4 texto" style="padding-top: 10px;display: flex;align-self: center;">netflix</h4> */
+
+.botao {
+  background-color: #ffbf19;
+  height: 70px;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 60%;
+}
+
+.caixa-add-site {
+  background-color: black;
+  width: 100%;
+  height: 40rem;
+}
+

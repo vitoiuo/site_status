@@ -10,7 +10,7 @@
     <section class="site-infos">
       <span class="site-tag">
         <h2 class="site-name">
-          <a href="{% url 'view-site' site.id %}">{{ site.name }}</a>
+          <a class="cor-nome-site" href="{% url 'view-site' site.id %}">{{ site.name }}</a>
         </h2>
         {% if site in down_urls %}
         <i class="fas fa-circle red-icon"></i>

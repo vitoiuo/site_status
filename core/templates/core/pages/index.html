@@ -1,17 +1,51 @@
 {% extends 'core/pages/base.html' %}
 {% block header %}
 <div class="lobby">
-    <figure>
-        <img class="lobby-image" src="https://img.freepik.com/free-vector/oops-404-error-with-broken-robot-concept-illustration_114360-5529.jpg?t=st=1657288444~exp=1657289044~hmac=d19766248355b33e28c3680c297e6cd72b6eae2c4a6b0609eb3cb4bf9bdd13fb&w=826" alt="">
-    </figure>
     <section class="lobby-call">
-        <h1>Mais do que um monitoramento comum</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sed ab doloribus reiciendis excepturi deleniti dolore a quas voluptas, necessitatibus, nostrum ex perferendis, ut sapiente facilis corporis esse enim culpa?</p>
+        <h2 class="titles">moniotramento de verdade!</h2>
+        <p class="texto-no-quadrado">SiteStatus monitora o status dos seus sites favoritos e confere se eles estão no ar ou não. 
+        Fazemos a checagem automaticamente de 10 em 10 minutos e caso o site informado fique fora do ar, nós te notificamos imediatamente via email!</p>
+
     </section>
-    <buttton class="btn lobby-btn"></buttton>
+    <div class="imagem" ><img class="lobby-image" src="https://user-images.githubusercontent.com/101004042/180075632-087f1da5-d1b8-4ef8-abe5-539ca52a89e6.png" alt=""></div>
+    
+    <p class="texto-no-quadrado">Cadastre-se <a class="botao" href="http://127.0.0.1:8000/accounts/register">AQUI</a> e nos envie a URL dos seus sites mais usados . Vamos monitorá-los 24 horas, 7 dias por semana, conferindo de 10 em 10 minutos se eles estão fora do ar ou não.</p>
+
+        <h2 class="titles">Sites mais monitorados</h2>
+    <div class="painel">
+            <div class="quadrado">
+                <i class="fa-brands fa-square-facebook"></i>
+                    <h4 class="centralizar">facebook.com.br</h4></div>
+            <div class="quadrado">
+                <i class="fa-brands fa-square-youtube"></i>
+                    <h4 class="centralizar">youtube.com.br</h4></div>
+            <div class="quadrado">
+                <i class="fa-brands fa-square-instagram"></i>
+                    <h4 class="centralizar">instagram.com.br</h4></div>
+            <div class="quadrado">
+                <i class="fa-brands fa-square-whatsapp"></i>
+                    <h4 class="centralizar">whatsapp.com.br</h4></div>
+            <div class="quadrado">
+                <i class="fa-brands fa-square-pinterest"></i>
+                    <h4 class="centralizar">pinterest.com.br</h4></div>
+            <div class="quadrado">
+                <i class="fa-brands fa-square-twitter"></i>
+                    <h4 class="centralizar">twitter.com.br</h4></div>
+        </div>
+</div>
+</figure>
+
+<!--     <buttton class="btn lobby-btn"></buttton> -->
 </div>
 {% endblock %}
 
 {% block content %}
 
 {% endblock %}
+
+body {
+    background-color: black
+}
+
+
+            

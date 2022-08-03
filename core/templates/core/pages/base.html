@@ -34,7 +34,7 @@
 
       <nav>
         <ul class="navigation-item">
-          <li class="nav-item-topic page-name"><a href="{% url 'index' %}">Oops</a></li>
+          <li class="nav-item-topic page-name"><a href="{% url 'index' %}">SiteStatus</a></li>
         </ul>
         <section>
 
@@ -57,9 +57,18 @@
       {% block content %}
       {% endblock %}
     </div>
-    <footer>
-      <ul class="footer-item">
-        <li class="footer-item-topic">Oops</li>
+
+    <footer style="background: #fffa008f;">
+      <p class="copyright" style="justify-content: center;align-self: center;display: flex;color: black;">Desenvolvido com ❤️ por:</p>
+      <ul class="list-inline" style="display: flex;justify-content: space-around;flex-direction: row;">
+          <li class="list-inline-item" style="color: white;"><a href="https://github.com/vitoiuo" style="color: black;">Victor</a></li>
+          <li class="list-inline-item"><a href="https://github.com/Beatrizresteves" style="color: black;">Beatriz</a></li>
+          <li class="list-inline-item"><a href="https://github.com/oBrenoMS" style="color: black;">Breno</a></li>
+      </ul>
+      <p class="copyright" style="justify-content: center;align-self: center;display: flex;color: black;">Buser Tech © 2022</p>
+  </footer>
+     <!--  <ul class="footer-item">
+        <li class="footer-item-topic">SiteStatus</li>
 
       </ul>
       <ul class="footer-item">
@@ -67,7 +76,7 @@
         <li class="footer-item-topic">Bia</li>
         <li class="footer-item-topic">Breno</li>
         <li class="footer-item-topic">Victor</li>
-    </footer>
+    </footer> -->
   </div>
 </body>
 

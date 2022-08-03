@@ -2,10 +2,12 @@
   display: flex;
   flex-flow: column nowrap;
   gap: 3rem;
-  padding: 1rem;
+  padding: 5% 10%;
+  background-color: black;
 }
 .lobby-image {
-  width: 100%;
+  width: 70%;
+  padding-left: 15%;
 }
 .lobby-call {
   display: flex;

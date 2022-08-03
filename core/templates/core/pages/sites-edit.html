@@ -2,9 +2,12 @@
 
 {% block content %}
 {% load crispy_forms_tags %}
-<form method="POST">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <input type="submit" value="Editar site">
-</form>
+<div class="caixa-add-site">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input class="botao-form" type="submit" value="Editar site">
+    </form>
+</div>
+
 {% endblock %}
